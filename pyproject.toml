@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtft-plus"
+version = "0.4.0"
+description = "MTFT+: multimodal TFT extensions for retail demand forecasting: cross-location siblings, lifecycle-aligned cross-series learning, hierarchical reconciliation"
+authors = [{ name = "Om Prakash Bhardwaj" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "lightning>=2.2", "numpy>=1.26", "pandas>=2.0"]
+
+[project.optional-dependencies]
+multimodal = ["transformers>=4.40", "sentencepiece>=0.2", "protobuf>=4.0", "pillow>=10.0"]
+baselines = ["statsmodels>=0.14", "chronos-forecasting>=2.0", "scipy>=1.11", "torchvision>=0.17", "pytorch-lightning>=2.2"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+packages = ["mtft_plus"]

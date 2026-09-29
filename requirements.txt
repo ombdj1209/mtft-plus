@@ -1,0 +1,14 @@
+torch>=2.2
+lightning>=2.2
+numpy>=1.26
+pandas>=2.0
+# multimodal feature extraction (optional for the synthetic benchmark)
+transformers>=4.40
+sentencepiece>=0.2
+protobuf>=4.0
+pillow>=10.0
+# external baselines (examples/visuelle2_official.py, examples/chronos2_baseline.py)
+statsmodels>=0.14
+chronos-forecasting>=2.0
+# open_clip_torch>=2.24   # alternative backend
+pytest>=8.0

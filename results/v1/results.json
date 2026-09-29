@@ -1,0 +1,688 @@
+{
+  "args": {
+    "articles": 1000,
+    "fcs": 5,
+    "days": 540,
+    "epochs": 8,
+    "batches_per_epoch": 100,
+    "batch_size": 256,
+    "d_model": 32,
+    "heads": 4,
+    "lr": 0.003,
+    "seed": 7,
+    "models": "TFT,MTFT-Picnic (10-d unimodal static),MTFT-SigLIP (static pooled),MTFT-SigLIP-XAttn (ours)",
+    "out": "results",
+    "quick": false,
+    "resume": true
+  },
+  "bottom": [
+    {
+      "model": "TFT",
+      "subset": "all",
+      "WAPE": 0.4161151945590973,
+      "MASE": 0.816167729968763,
+      "Pinball": 2.246996970349225,
+      "wQL": 0.2640390106865882,
+      "Cov80": 0.7867964285714286
+    },
+    {
+      "model": "TFT",
+      "subset": "warm",
+      "WAPE": 0.4147460460662842,
+      "MASE": 0.816167729968763,
+      "Pinball": 2.2844408816449833,
+      "wQL": 0.26327277832356316,
+      "Cov80": 0.7873214285714286
+    },
+    {
+      "model": "TFT",
+      "subset": "cold-start",
+      "WAPE": 0.43137410283088684,
+      "MASE": NaN,
+      "Pinball": 1.9100017686874042,
+      "wQL": 0.2725785587867889,
+      "Cov80": 0.7820714285714285
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "subset": "all",
+      "WAPE": 0.41194623708724976,
+      "MASE": 0.8038456418254387,
+      "Pinball": 2.231158836409199,
+      "wQL": 0.2621779110625888,
+      "Cov80": 0.79385
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "subset": "warm",
+      "WAPE": 0.41076207160949707,
+      "MASE": 0.8038456418254387,
+      "Pinball": 2.269596377728848,
+      "wQL": 0.2615620079463395,
+      "Cov80": 0.7951230158730159
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "subset": "cold-start",
+      "WAPE": 0.42514392733573914,
+      "MASE": NaN,
+      "Pinball": 1.8852209645323497,
+      "wQL": 0.2690420615997706,
+      "Cov80": 0.7823928571428571
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "subset": "all",
+      "WAPE": 0.42135190963745117,
+      "MASE": 0.8077529931280392,
+      "Pinball": 2.2889811012530585,
+      "wQL": 0.2689724612139649,
+      "Cov80": 0.7875607142857143
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "subset": "warm",
+      "WAPE": 0.41875913739204407,
+      "MASE": 0.8077529931280392,
+      "Pinball": 2.3166669241627615,
+      "wQL": 0.2669867022934047,
+      "Cov80": 0.788686507936508
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "subset": "cold-start",
+      "WAPE": 0.45024797320365906,
+      "MASE": NaN,
+      "Pinball": 2.0398086950657333,
+      "wQL": 0.2911034551993524,
+      "Cov80": 0.7774285714285715
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "subset": "all",
+      "WAPE": 0.4163771867752075,
+      "MASE": 0.801832776345584,
+      "Pinball": 2.261373078504117,
+      "wQL": 0.2657283113064043,
+      "Cov80": 0.7914857142857142
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "subset": "warm",
+      "WAPE": 0.41363757848739624,
+      "MASE": 0.801832776345584,
+      "Pinball": 2.2884209806658067,
+      "wQL": 0.2637314689973429,
+      "Cov80": 0.792984126984127
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "subset": "cold-start",
+      "WAPE": 0.4469098448753357,
+      "MASE": NaN,
+      "Pinball": 2.017941959048908,
+      "wQL": 0.2879828280425862,
+      "Cov80": 0.778
+    }
+  ],
+  "hierarchy": [
+    {
+      "model": "TFT",
+      "method": "base (incoherent)",
+      "level": "national",
+      "WAPE": 0.0465289707952519,
+      "MASE": 1.6575371737839375,
+      "Pinball": 1346.3730701140717,
+      "wQL": 0.03164178840817323,
+      "Cov80": 0.4642857142857143
+    },
+    {
+      "model": "TFT",
+      "method": "base (incoherent)",
+      "level": "fulfilment_centre",
+      "WAPE": 0.055743907625688746,
+      "MASE": 1.404903739754295,
+      "Pinball": 311.9604643951933,
+      "wQL": 0.036657696240433,
+      "Cov80": 0.5535714285714286
+    },
+    {
+      "model": "TFT",
+      "method": "base (incoherent)",
+      "level": "article_national",
+      "WAPE": 0.2699241337739724,
+      "MASE": 1.0384672498910166,
+      "Pinball": 8.09325089376022,
+      "wQL": 0.19020354610399645,
+      "Cov80": 0.7057321428571428
+    },
+    {
+      "model": "TFT",
+      "method": "base (incoherent)",
+      "level": "article_x_fc",
+      "WAPE": 0.41611520821212816,
+      "MASE": 0.8161677292728905,
+      "Pinball": 2.246996970409548,
+      "wQL": 0.26403901069367713,
+      "Cov80": 0.7867964285714286
+    },
+    {
+      "model": "TFT",
+      "method": "bottom-up",
+      "level": "national",
+      "WAPE": 0.07788417608732007,
+      "MASE": 2.7745276740022105,
+      "Pinball": 2373.590003381076,
+      "wQL": 0.05578292846304176,
+      "Cov80": 0.05357142857142857
+    },
+    {
+      "model": "TFT",
+      "method": "bottom-up",
+      "level": "fulfilment_centre",
+      "WAPE": 0.0788814672896355,
+      "MASE": 1.9048120373507786,
+      "Pinball": 452.7039974180792,
+      "wQL": 0.05319611783613376,
+      "Cov80": 0.35714285714285715
+    },
+    {
+      "model": "TFT",
+      "method": "bottom-up",
+      "level": "article_national",
+      "WAPE": 0.22422799830194895,
+      "MASE": 0.7483658365402042,
+      "Pinball": 6.290006430423983,
+      "wQL": 0.147824594070841,
+      "Cov80": 0.7481785714285715
+    },
+    {
+      "model": "TFT",
+      "method": "bottom-up",
+      "level": "article_x_fc",
+      "WAPE": 0.41611520450030354,
+      "MASE": 0.8161677250657007,
+      "Pinball": 2.24699695248519,
+      "wQL": 0.2640390085874285,
+      "Cov80": 0.7826285714285715
+    },
+    {
+      "model": "TFT",
+      "method": "MinT-shrink",
+      "level": "national",
+      "WAPE": 0.03792136463438694,
+      "MASE": 1.350901824987844,
+      "Pinball": 999.3719218668127,
+      "wQL": 0.02348674048427005,
+      "Cov80": 0.5892857142857143
+    },
+    {
+      "model": "TFT",
+      "method": "MinT-shrink",
+      "level": "fulfilment_centre",
+      "WAPE": 0.043487170832529266,
+      "MASE": 1.0831677342916581,
+      "Pinball": 231.50390682170254,
+      "wQL": 0.027203446793157934,
+      "Cov80": 0.7142857142857143
+    },
+    {
+      "model": "TFT",
+      "method": "MinT-shrink",
+      "level": "article_national",
+      "WAPE": 0.23616771486508,
+      "MASE": 0.7324442673337048,
+      "Pinball": 6.925738923097077,
+      "wQL": 0.16276526205052588,
+      "Cov80": 0.7356607142857143
+    },
+    {
+      "model": "TFT",
+      "method": "MinT-shrink",
+      "level": "article_x_fc",
+      "WAPE": 0.4380533663021595,
+      "MASE": 0.8439432189461606,
+      "Pinball": 2.380201366394176,
+      "wQL": 0.2796915270962304,
+      "Cov80": 0.7521928571428571
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "base (incoherent)",
+      "level": "national",
+      "WAPE": 0.0465289707952519,
+      "MASE": 1.6575371737839375,
+      "Pinball": 1346.3730701140717,
+      "wQL": 0.03164178840817323,
+      "Cov80": 0.4642857142857143
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "base (incoherent)",
+      "level": "fulfilment_centre",
+      "WAPE": 0.055743907625688746,
+      "MASE": 1.404903739754295,
+      "Pinball": 311.9604643951933,
+      "wQL": 0.036657696240433,
+      "Cov80": 0.5535714285714286
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "base (incoherent)",
+      "level": "article_national",
+      "WAPE": 0.26940186625484963,
+      "MASE": 1.0384672498910166,
+      "Pinball": 8.080311522987694,
+      "wQL": 0.1898994514654396,
+      "Cov80": 0.7059285714285715
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "base (incoherent)",
+      "level": "article_x_fc",
+      "WAPE": 0.4119462567420868,
+      "MASE": 0.8038456419519807,
+      "Pinball": 2.231158836443228,
+      "wQL": 0.262177911066587,
+      "Cov80": 0.79385
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "bottom-up",
+      "level": "national",
+      "WAPE": 0.09120080030571155,
+      "MASE": 3.2489159807718884,
+      "Pinball": 2914.9723754750958,
+      "wQL": 0.0685062269647435,
+      "Cov80": 0.03571428571428571
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "bottom-up",
+      "level": "fulfilment_centre",
+      "WAPE": 0.0921990152210934,
+      "MASE": 2.2197515199581246,
+      "Pinball": 548.5361785077059,
+      "wQL": 0.06445711846085213,
+      "Cov80": 0.2642857142857143
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "bottom-up",
+      "level": "article_national",
+      "WAPE": 0.22464783819510376,
+      "MASE": 0.7274951795538224,
+      "Pinball": 6.299002438080417,
+      "wQL": 0.14803601375614364,
+      "Cov80": 0.753375
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "bottom-up",
+      "level": "article_x_fc",
+      "WAPE": 0.41194625260244777,
+      "MASE": 0.8038456378186355,
+      "Pinball": 2.231158813733646,
+      "wQL": 0.26217790839803606,
+      "Cov80": 0.7890178571428571
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "MinT-shrink",
+      "level": "national",
+      "WAPE": 0.0417191870875308,
+      "MASE": 1.4861945638540912,
+      "Pinball": 1103.5867122373618,
+      "wQL": 0.02593594451181916,
+      "Cov80": 0.5714285714285714
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "MinT-shrink",
+      "level": "fulfilment_centre",
+      "WAPE": 0.046439486611657886,
+      "MASE": 1.1558205016230307,
+      "Pinball": 246.94835101767134,
+      "wQL": 0.029018284917071372,
+      "Cov80": 0.6785714285714286
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "MinT-shrink",
+      "level": "article_national",
+      "WAPE": 0.23276537227849353,
+      "MASE": 0.7185228075386721,
+      "Pinball": 6.831688960509177,
+      "wQL": 0.1605549467359512,
+      "Cov80": 0.7456607142857142
+    },
+    {
+      "model": "MTFT-Picnic (10-d unimodal static)",
+      "method": "MinT-shrink",
+      "level": "article_x_fc",
+      "WAPE": 0.43113823447276506,
+      "MASE": 0.8280464307320573,
+      "Pinball": 2.347476970630123,
+      "wQL": 0.27584616495428094,
+      "Cov80": 0.7630321428571428
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "base (incoherent)",
+      "level": "national",
+      "WAPE": 0.0465289707952519,
+      "MASE": 1.6575371737839375,
+      "Pinball": 1346.3730701140717,
+      "wQL": 0.03164178840817323,
+      "Cov80": 0.4642857142857143
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "base (incoherent)",
+      "level": "fulfilment_centre",
+      "WAPE": 0.055743907625688746,
+      "MASE": 1.404903739754295,
+      "Pinball": 311.9604643951933,
+      "wQL": 0.036657696240433,
+      "Cov80": 0.5535714285714286
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "base (incoherent)",
+      "level": "article_national",
+      "WAPE": 0.27159710441483514,
+      "MASE": 1.0384672498910166,
+      "Pinball": 8.135820771049469,
+      "wQL": 0.1912040021288887,
+      "Cov80": 0.7048035714285714
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "base (incoherent)",
+      "level": "article_x_fc",
+      "WAPE": 0.4213519050798465,
+      "MASE": 0.8077529932935958,
+      "Pinball": 2.2889811010819794,
+      "wQL": 0.2689724611938616,
+      "Cov80": 0.7875607142857143
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "bottom-up",
+      "level": "national",
+      "WAPE": 0.11752395138411569,
+      "MASE": 4.1866457585394645,
+      "Pinball": 4033.903944250344,
+      "wQL": 0.09480279864187309,
+      "Cov80": 0.0
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "bottom-up",
+      "level": "fulfilment_centre",
+      "WAPE": 0.11871429652771999,
+      "MASE": 2.865760612736242,
+      "Pinball": 755.4090902139712,
+      "wQL": 0.08876623843989982,
+      "Cov80": 0.09285714285714286
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "bottom-up",
+      "level": "article_national",
+      "WAPE": 0.24095681578419814,
+      "MASE": 0.73748590226817,
+      "Pinball": 6.781667789695055,
+      "wQL": 0.15937937412687084,
+      "Cov80": 0.7436607142857142
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "bottom-up",
+      "level": "article_x_fc",
+      "WAPE": 0.421351900043367,
+      "MASE": 0.807752988793134,
+      "Pinball": 2.2889810739276606,
+      "wQL": 0.26897245800302594,
+      "Cov80": 0.783625
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "MinT-shrink",
+      "level": "national",
+      "WAPE": 0.04474343647408778,
+      "MASE": 1.5939297167133715,
+      "Pinball": 1169.2216894110481,
+      "wQL": 0.027478465010783923,
+      "Cov80": 0.44642857142857145
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "MinT-shrink",
+      "level": "fulfilment_centre",
+      "WAPE": 0.04939141804666309,
+      "MASE": 1.2430734309980553,
+      "Pinball": 261.86997200447513,
+      "wQL": 0.030771687389431424,
+      "Cov80": 0.625
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "MinT-shrink",
+      "level": "article_national",
+      "WAPE": 0.23488199802065338,
+      "MASE": 0.7198307854139122,
+      "Pinball": 6.8937177081733205,
+      "wQL": 0.1620127154275424,
+      "Cov80": 0.7430357142857142
+    },
+    {
+      "model": "MTFT-SigLIP (static pooled)",
+      "method": "MinT-shrink",
+      "level": "article_x_fc",
+      "WAPE": 0.43298423867286767,
+      "MASE": 0.831249017896299,
+      "Pinball": 2.375332488503941,
+      "wQL": 0.2791193973967903,
+      "Cov80": 0.7593428571428571
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "base (incoherent)",
+      "level": "national",
+      "WAPE": 0.0465289707952519,
+      "MASE": 1.6575371737839375,
+      "Pinball": 1346.3730701140717,
+      "wQL": 0.03164178840817323,
+      "Cov80": 0.4642857142857143
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "base (incoherent)",
+      "level": "fulfilment_centre",
+      "WAPE": 0.055743907625688746,
+      "MASE": 1.404903739754295,
+      "Pinball": 311.9604643951933,
+      "wQL": 0.036657696240433,
+      "Cov80": 0.5535714285714286
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "base (incoherent)",
+      "level": "article_national",
+      "WAPE": 0.2717103940217092,
+      "MASE": 1.0384672498910166,
+      "Pinball": 8.132255454125003,
+      "wQL": 0.19112021182868424,
+      "Cov80": 0.7046785714285714
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "base (incoherent)",
+      "level": "article_x_fc",
+      "WAPE": 0.41637719559396036,
+      "MASE": 0.8018327765656428,
+      "Pinball": 2.261373078392477,
+      "wQL": 0.2657283112932863,
+      "Cov80": 0.7914857142857142
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "bottom-up",
+      "level": "national",
+      "WAPE": 0.09781421636721456,
+      "MASE": 3.4845107678536524,
+      "Pinball": 3195.2453923530225,
+      "wQL": 0.07509306362497194,
+      "Cov80": 0.0
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "bottom-up",
+      "level": "fulfilment_centre",
+      "WAPE": 0.09833448906542422,
+      "MASE": 2.361480605198821,
+      "Pinball": 592.0582455892248,
+      "wQL": 0.06957128803334316,
+      "Cov80": 0.23214285714285715
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "bottom-up",
+      "level": "article_national",
+      "WAPE": 0.23268766617811637,
+      "MASE": 0.7205025740928461,
+      "Pinball": 6.558537517670463,
+      "wQL": 0.15413547775700218,
+      "Cov80": 0.7504285714285714
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "bottom-up",
+      "level": "article_x_fc",
+      "WAPE": 0.41637719140226137,
+      "MASE": 0.8018327730403688,
+      "Pinball": 2.261373056339571,
+      "wQL": 0.2657283087019029,
+      "Cov80": 0.7869357142857143
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "MinT-shrink",
+      "level": "national",
+      "WAPE": 0.04624451537275125,
+      "MASE": 1.6474038003389493,
+      "Pinball": 1212.2593900643722,
+      "wQL": 0.02848991558705799,
+      "Cov80": 0.48214285714285715
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "MinT-shrink",
+      "level": "fulfilment_centre",
+      "WAPE": 0.049393068690465,
+      "MASE": 1.2338432689619059,
+      "Pinball": 264.06538538191217,
+      "wQL": 0.031029664940748044,
+      "Cov80": 0.6428571428571429
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "MinT-shrink",
+      "level": "article_national",
+      "WAPE": 0.2344763765232571,
+      "MASE": 0.7073647195624325,
+      "Pinball": 6.882693371439567,
+      "wQL": 0.16175362696386605,
+      "Cov80": 0.7471964285714285
+    },
+    {
+      "model": "MTFT-SigLIP-XAttn (ours)",
+      "method": "MinT-shrink",
+      "level": "article_x_fc",
+      "WAPE": 0.4316590576573822,
+      "MASE": 0.8249605761817903,
+      "Pinball": 2.362317941675203,
+      "wQL": 0.2775900904531064,
+      "Cov80": 0.7630642857142858
+    }
+  ],
+  "models": {
+    "TFT": {
+      "params": 219895,
+      "train_seconds": 471.13142681121826,
+      "val_curve": [
+        0.44575586915016174,
+        0.4482118785381317,
+        0.43675684928894043,
+        0.41653481125831604,
+        0.4142118990421295,
+        0.41418641805648804,
+        0.4139094948768616,
+        0.4134095311164856
+      ],
+      "mint_lambda": 0.9346636437323117,
+      "mint_max_coherence_error": 3.637978807091713e-10
+    },
+    "MTFT-Picnic (10-d unimodal static)": {
+      "params": 347995,
+      "train_seconds": 504.7368938922882,
+      "val_curve": [
+        0.45066794753074646,
+        0.42636120319366455,
+        0.42197728157043457,
+        0.4128228425979614,
+        0.41092658042907715,
+        0.41054457426071167,
+        0.41049742698669434,
+        0.4098966419696808
+      ],
+      "mint_lambda": 0.9471991297607348,
+      "mint_max_coherence_error": 3.92901711165905e-10
+    },
+    "MTFT-SigLIP (static pooled)": {
+      "params": 374718,
+      "train_seconds": 528.8002164363861,
+      "val_curve": [
+        0.43993309140205383,
+        0.4173312783241272,
+        0.4249526858329773,
+        0.41250279545783997,
+        0.4108177423477173,
+        0.4105326533317566,
+        0.41127657890319824,
+        0.4105518162250519
+      ],
+      "mint_lambda": 0.9414279434423733,
+      "mint_max_coherence_error": 4.0745362639427185e-10
+    },
+    "MTFT-SigLIP-XAttn (ours)": {
+      "params": 381182,
+      "train_seconds": 535.0179100036621,
+      "val_curve": [
+        0.4346376061439514,
+        0.41751497983932495,
+        0.41710153222084045,
+        0.4116020202636719,
+        0.41012826561927795,
+        0.40912002325057983,
+        0.4091640114784241,
+        0.4093186855316162
+      ],
+      "mint_lambda": 0.9488841238327365,
+      "mint_max_coherence_error": 3.92901711165905e-10,
+      "modality_attribution": {
+        "promo_days": {
+          "image": 0.27619999647140503,
+          "text": 0.3095000088214874,
+          "fused": 0.41429999470710754
+        },
+        "non_promo_days": {
+          "image": 0.2754000127315521,
+          "text": 0.30889999866485596,
+          "fused": 0.4154999852180481
+        }
+      }
+    }
+  }
+}

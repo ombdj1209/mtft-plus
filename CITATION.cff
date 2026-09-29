@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MTFT+: Extensions of the Multimodal Temporal Fusion Transformer for Retail Demand Forecasting"
+authors:
+  - family-names: Bhardwaj
+    given-names: Om Prakash
+version: 0.4.0
+date-released: 2026-09-29
+license: MIT
+repository-code: "https://github.com/ombdj1209/mtft-plus"

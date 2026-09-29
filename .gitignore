@@ -1,0 +1,35 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mm_cache/
+.hf_models/
+.published_cache/
+.chronos_ft/
+lightning_logs/
+
+# datasets and derived data (not redistributable: VISUELLE 2.0 has no redistribution grant; M5 Kaggle rules forbid it)
+visuelle2/
+data/
+*.pkl
+*.pt
+*.npz
+panel_*
+
+# per-run result files that contain per-product sales derived from the datasets
+results_visuelle2/partials/
+results_visuelle2/forecasts/
+results_visuelle2_official/partials/
+results_visuelle2_official/forecasts/
+results_visuelle2_official/diagnostics/
+results_visuelle2_official/published_early_stopped/
+results_m5*/partials/
+results_m5*/forecasts/
+
+# logs and job queues
+logs/
+*.log
+gpu_queue.txt
+.queue_release
